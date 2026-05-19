@@ -1,0 +1,19 @@
+# LangGraph 核心
+langgraph>=1.0.5
+langgraph-checkpoint>=3.0.1
+langgraph-checkpoint-sqlite>=3.1.0
+langgraph-prebuilt>=1.0.5
+
+# LangChain
+langchain>=1.2.3
+langchain-core>=1.2.19
+langchain-openai>=1.1.11
+
+# 数据校验
+pydantic>=2.12.5
+
+# 异步 SQLite（langgraph-checkpoint-sqlite 依赖）
+aiosqlite>=0.22.1
+
+# 本地开发环境变量加载（从 .env 文件读取配置）
+python-dotenv>=1.0.0
