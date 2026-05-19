@@ -4,7 +4,7 @@ config.py — 全局配置中心
 生产实践要点：
   - 所有敏感信息（API Key）通过环境变量注入，不硬编码在代码中
   - 本地开发：在项目根目录创建 .env 文件（参考 .env.example），
-    或在终端中 export MINIMAX_API_KEY=your_key
+    或在终端中 export DEEPSEEK_API_KEY=your_key
   - 生产部署：通过 CI/CD 环境变量或 Secrets Manager 注入
 """
 import os
@@ -23,13 +23,13 @@ except ImportError:
 BASE_DIR = Path(__file__).parent
 
 # ============================================================
-# LLM 配置 (MiniMax，OpenAI 兼容接口)
-# 生产环境：从环境变量读取，例如 os.environ["MINIMAX_API_KEY"]
+# LLM 配置 (DeepSeek，OpenAI 兼容接口)
+# 生产环境：从环境变量读取，例如 os.environ["DEEPSEEK_API_KEY"]
 # ============================================================
 LLM_CONFIG = {
-    "model": os.getenv("MINIMAX_MODEL", "MiniMax-M2.7"),
-    "api_key": os.environ["MINIMAX_API_KEY"],   # 必须通过环境变量提供，不提供则启动时报错
-    "base_url": os.getenv("MINIMAX_BASE_URL", "https://api.minimax.chat/v1"),
+    "model": os.getenv("DEEPSEEK_MODEL", "deepseek-v4-flash"),
+    "api_key": os.environ["DEEPSEEK_API_KEY"],  # 必须通过环境变量提供，不提供则启动时报错
+    "base_url": os.getenv("DEEPSEEK_BASE_URL", "https://api.deepseek.com"),
     "temperature": 0,
 }
 

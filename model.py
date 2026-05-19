@@ -38,7 +38,6 @@ _llm = ChatOpenAI(
     api_key=LLM_CONFIG["api_key"],
     base_url=LLM_CONFIG["base_url"],
     temperature=LLM_CONFIG["temperature"],
-    extra_body={"reasoning_split": True},
 )
 
 # ============================================================
